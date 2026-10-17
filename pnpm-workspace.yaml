@@ -15,3 +15,7 @@ nodeLinker: hoisted
 # Kurulumda script çalıştırmasına izin verilen paketler (pnpm varsayılan olarak engeller).
 allowBuilds:
   unrs-resolver: true
+
+# NativeWind v5 RC: newer lightningcss versions fail to deserialize global.css.
+overrides:
+  lightningcss: 1.30.1
