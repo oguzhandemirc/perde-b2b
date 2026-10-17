@@ -16,8 +16,9 @@ docs/
   api/               frontend ↔ backend API sözleşmesi
 .claude/
   rules/     kurallar — general/ ve domain/ her zaman, diğerleri ilgili klasörde yüklenir
-  skills/    /new-screen, /ui-component, /mock-data, /api-proposal, /screen-review,
-             /record-decision, /commit, /pr, /demo-check
+  skills/    /new-screen, /ui-component, /add-ui, /add-translation, /mock-data,
+             /api-proposal, /screen-review, /run-demo, /build-apk, /demo-check,
+             /record-decision, /commit, /pr
   agents/    reviewer — değişiklikleri kurallara göre inceler
 ```
 
@@ -33,10 +34,17 @@ docs/
 
 - Oğuzhan: `apps/mobile`, `apps/web`, frontend tarafı `packages/*`.
 - Yusuf: `apps/backend`.
-- Bir kişinin alanındaki dosyalar o kişiyle konuşulmadan değiştirilmez. API sözleşmesi (`docs/api/`) ortak karardır.
+- Bir kişinin alanındaki dosyalar o kişiyle konuşulmadan değiştirilmez.
+- PR'lar onaya düşmez: her PR CI geçince açan kişi tarafından birleştirilir. Ortak alanlara (`docs/api/`, `packages/`, `.github/`, kök yapılandırma) dokunan PR'da karşı taraf bilgilendirme amacıyla etiketlenir (bkz. `.claude/rules/general/git.md`).
+- API sözleşmesi (`docs/api/`) önce yazılır, sonra kodlanır; kırıcı değişiklik önceden konuşulur.
+
+## İnceleme
+
+- Her özellik/ekran bitince `reviewer` ajanı kullanıcı istemeden otomatik çalıştırılır; bulgular düzeltilir, sonra kullanıcıya rapor edilir.
 
 ## Mevcut aşama: müşteri demosu
 
+- Müşteri **CEKA TEKSTİL**, bir **brode perde fabrikası** (giyim değil: beden/asorti yok; stok ve termin kapsam dışı). Domain: `.claude/rules/domain/`.
 - Mobil uygulama, müşteriye gösterilecek demo için **mock data** ile geliştiriliyor; backend henüz yok.
 - Veri yalnızca servis katmanından okunur; backend gelince sadece o katman değişir.
 - İş kuralları henüz taslak (`.claude/rules/domain/business-rules.md`). Netleşmemiş bir kural gerekirse uydurulmaz, sorulur; netleşen karar `/record-decision` ile kaydedilir.

@@ -1,6 +1,6 @@
 # API sözleşmesi
 
-Frontend (mobil, web) ile backend arasındaki ortak sözleşme. Değişiklikler iki tarafın onayıyla yapılır (bkz. `.claude/rules/api/contract.md`).
+Frontend (mobil, web) ile backend arasındaki ortak sözleşme. Değişiklik önce buraya yazılır, karşı taraf PR'da etiketlenip bilgilendirilir; kırıcı değişiklik önceden konuşulur (bkz. `.claude/rules/api/contract.md`).
 
 > Henüz uç tanımlanmadı. Demo sırasında mock servislerin ihtiyaç duyduğu uçlar buraya **öneri** olarak eklenir; backend başlarken Yusuf'la birlikte kesinleştirilir. Format (OpenAPI dosyası mı, markdown mı) backend teknolojisiyle birlikte seçilecek.
 

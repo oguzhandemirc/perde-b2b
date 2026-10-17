@@ -23,8 +23,23 @@ Demo aşamasında backend yoktur; ancak kod, backend geldiğinde **yalnızca ser
 ## Mock veri
 
 - Tipler `types/` altındaki domain tipleriyle birebir uyumludur; mock için ayrı tip tanımlanmaz.
-- Veri gerçekçi ve Türkçedir: gerçekçi firma/ürün adları, Türkiye adresleri, ₺ fiyatlar. "Lorem ipsum", "Test Ürün 1", "asdf" kullanılmaz.
-- Kimlikler sabit ve okunabilir: `prd_001`, `ord_1042`, `cmp_003` — her açılışta değişen rastgele id üretilmez.
-- Kenar durumlar da veride bulunur: stokta olmayan ürün, kredi limitine yaklaşmış firma, iptal edilmiş sipariş, uzun ürün adı, görseli olmayan ürün.
-- Mock'ta yapılan değişiklikler (sepete ekleme, sipariş verme) uygulama açıkken bellekte tutulur; demo sırasında akış tutarlı olmalıdır.
+- Veri gerçekçi ve Türkçedir: CEKA TEKSTİL'in brode perde kataloğuna uygun desenler (`patternCode` ör. `BRD-2041`), gerçekçi firma adları, Türkiye ve ihracat adresleri. "Lorem ipsum", "Test Ürün 1", "asdf" kullanılmaz.
+- Perde gerçekliği: her desenin renkleri ve boyları (ör. 280 / 300 / 320 cm) vardır; fiyat varyant bazında metre fiyatıdır. Uzunluk santimetre, para kuruş cinsinden tam sayıdır. Stok, stok durumu, termin, beden ve asorti verisi **üretilmez** (kapsam dışı, bkz. `domain/business-rules.md`).
+- Platform ayarları (`PlatformSettings`) mock'ta tutulur; hazır perde ve özel ölçü kapalı başlar, açılınca akış çalışır.
+- Kimlikler sabit ve okunabilir: `prd_001`, `ord_1042`, `cmp_003`, `smp_007` — her açılışta değişen rastgele id üretilmez.
+- Kenar durumlar da veride bulunur:
+  - indirim tanımlı firma ve hiç indirimi olmayan firma
+  - USD (ihracat) firması — KDV satırı gösterilmez
+  - kredi limitine yaklaşmış firma
+  - iptal edilmiş sipariş
+  - uzun desen adı
+  - görseli olmayan ürün
+  - satış temsilcisine atanmış birden çok firma
+- Mock'ta yapılan değişiklikler (sepete ekleme, sipariş verme, numune talebi) uygulama açıkken bellekte tutulur; demo sırasında akış tutarlı olmalıdır. Oturum ve sepet ayrıca kalıcıdır (Zustand persist).
 - Gerçek müşteri verisi mock'a kopyalanmaz (bkz. `general/security.md`).
+
+## Görseller
+
+- Ürün görselleri internetten bulunan **telifsiz** (Unsplash / Pexels lisanslı) brode perde / tül fotoğraflarıdır; uzak URL kullanılmaz, dosyalar `apps/mobile/assets/` altına gömülür ki demo internetsiz çalışsın.
+- Her görselin kaynak URL'si, yazarı ve lisansı bir listede tutulur (ör. `apps/mobile/assets/products/SOURCES.md`). Listede olmayan görsel eklenmez.
+- Görseller makul boyuta küçültülür (uygulama boyutu ve APK için).

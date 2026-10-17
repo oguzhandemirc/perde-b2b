@@ -22,9 +22,9 @@ allowed-tools:
    - `git fetch origin` ve `git log origin/main..HEAD` ile PR'a girecek commit'leri listele; `main` gerideyse rebase öner.
    - Bu branch için açık PR var mı bak (`gh pr list --head <branch>`); varsa yeni açma, güncelle.
 2. **Kapsamı belirle:** `git diff origin/main...HEAD --stat`. Değişen alanları tespit et:
-   - Ortak alan (`docs/api/`, `packages/`, `.claude/`, `.github/`, kök yapılandırma) → diğer kişinin onayı gerekir; açıklamada belirt.
+   - Ortak alan (`docs/api/`, `packages/`, `.github/`, kök yapılandırma) → karşı taraf açıklamada `@` ile etiketlenir; bilgilendirmedir, onay beklenmez (bkz. `general/git.md`).
    - Diğer kişinin alanı → kullanıcıya özellikle hatırlat.
 3. **Başlık:** squash sonrası main'e commit mesajı olarak gider → `<type>(<scope>): <özet>` (İngilizce, `.claude/rules/general/git.md`).
-4. **Açıklama:** `.github/pull_request_template.md` şablonunu Türkçe doldur: ne değişti, neden (ilgili karar/gereksinim), nasıl test edildi, API sözleşmesi kutusu. Ekran değişikliği varsa ekran görüntüsü eklenmesini öner. Ek not: $ARGUMENTS
+4. **Açıklama:** `.github/pull_request_template.md` şablonunu Türkçe doldur: ne değişti, neden (ilgili karar/gereksinim), nasıl test edildi, ortak alan ve API sözleşmesi kutuları. Ekran değişikliği varsa ekran görüntüsü eklenmesini öner. Ek not: $ARGUMENTS
 5. **Onay al:** Başlığı ve açıklamayı kullanıcıya göster; onay gelince `git push -u origin <branch>` ve `gh pr create --title ... --body-file ...` çalıştır.
-6. PR bağlantısını paylaş. Birleştirme yapma (squash merge'ü kullanıcı veya sahibi yapar).
+6. PR bağlantısını paylaş. Birleştirme yapma; CI geçince squash merge'ü PR'ı açan kullanıcı yapar.
