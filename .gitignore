@@ -27,4 +27,5 @@ apps/mobile/android/
 
 # Claude Code (kişisel ayarlar)
 .claude/settings.local.json
+.claude/worktrees/
 CLAUDE.local.md
