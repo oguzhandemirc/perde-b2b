@@ -11,7 +11,7 @@
 
 - Değişken/fonksiyon: `camelCase`; tip/arayüz/bileşen: `PascalCase`; sabit: `UPPER_SNAKE_CASE`.
 - Dosya: bileşenler `PascalCase.tsx`, diğerleri `camelCase.ts`; Expo Router rotaları `kebab-case.tsx`.
-- Boolean'lar `is/has/can/should` ile başlar: `isLoading`, `hasStock`.
+- Boolean'lar `is/has/can/should` ile başlar: `isLoading`, `hasDiscount`.
 - Kısaltma kullanılmaz (`qty` değil `quantity`), yaygın olanlar hariç (`id`, `url`, `api`).
 
 ## Yapı

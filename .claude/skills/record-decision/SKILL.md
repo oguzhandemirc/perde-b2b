@@ -14,7 +14,7 @@ Kararın türüne göre doğru yere yaz:
 - **Özellik / kapsam** (ilk sürümde ne var, ne yok): `docs/gereksinimler.md`.
 - **Yeni domain terimi:** `.claude/rules/domain/glossary.md`.
 - **Teknik karar** (kütüphane, mimari, araç): `docs/adr/NNNN-kisa-baslik.md` — `docs/adr/0000-sablon.md` şablonuyla, sıradaki numarayla.
-- **API sözleşmesi:** `docs/api/` — kullanıcıya diğer tarafın onayının gerektiğini hatırlat.
+- **API sözleşmesi:** `docs/api/` — kullanıcıya karşı tarafın PR'da etiketlenmesini, kırıcı değişiklikse önceden konuşulmasını hatırlat.
 
 Kurallar:
 

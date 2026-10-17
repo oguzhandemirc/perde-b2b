@@ -20,9 +20,9 @@
 
 - PR'lar **squash merge** ile birleştirilir; PR başlığı main'deki commit mesajı olacağı için conventional commit biçiminde yazılır.
 - CI (lint, typecheck, format) geçmeden PR birleştirilmez.
-- Onay kuralı:
-  - Kendi alanındaki PR'ı (Oğuzhan: `apps/mobile`, `apps/web`; Yusuf: `apps/backend`) CI geçince sahibi birleştirebilir.
-  - Ortak alanlar — `docs/api/`, `packages/`, `.claude/`, kök yapılandırma dosyaları — **diğer kişinin onayını** ister (CODEOWNERS).
+- Onay kuralı: her PR, CI geçince **açan kişi tarafından** birleştirilir. Hiçbir alan karşı tarafın onayını gerektirmez; CODEOWNERS ve zorunlu inceleyici kullanılmaz.
+- Ortak alanlara — `docs/api/`, `packages/`, `.github/`, kök yapılandırma dosyaları — dokunan PR'larda karşı taraf PR açıklamasında etiketlenir (`@kullanıcı`). Bu bilgilendirmedir; onay beklenmez.
+- Alan sahipliği geçerlidir: birinin klasörüne (`apps/mobile`, `apps/web` ↔ `apps/backend`) o kişiyle konuşulmadan kod yazılmaz.
 - PR açıklaması `.github/pull_request_template.md` şablonuyla doldurulur.
 - Birleşen branch silinir.
 
@@ -30,5 +30,5 @@
 
 - Kullanıcı açıkça istemeden commit atma, push etme, branch silme, PR birleştirme.
 - `main` üzerindeyken commit gerekiyorsa önce yeni branch aç.
-- Diğer kişinin alanına veya ortak alanlara dokunan değişiklikleri commit'lemeden önce kullanıcıya belirt.
+- Diğer kişinin alanına dokunan değişiklikleri commit'lemeden önce kullanıcıya belirt; ortak alana dokunuyorsa PR'da karşı tarafın etiketlenmesini hatırlat.
 - Gizli bilgi içeren dosyaları (`.env`, anahtar, sertifika) asla stage'leme.

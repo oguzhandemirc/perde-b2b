@@ -15,8 +15,9 @@ paths: 'apps/mobile/**'
 2. **Tip.** Gerekli domain tipleri `src/types/` altında var mı bak; yoksa `glossary.md` adlarıyla ekle.
 3. **Sözleşme.** Veri için gereken uç `docs/api/` altında tanımlı mı bak; değilse `/api-proposal` akışıyla öneri olarak ekle ve kullanıcıya backend'le konuşulması gerektiğini söyle.
 4. **Mock + servis + query.** `src/mocks/` altına gerçekçi Türkçe veri (kenar durumlar dahil), `src/services/` altına async servis fonksiyonu (bkz. `mobile/mock-data.md`), `src/queries/` altına TanStack Query hook'u ekle.
-5. **Feature bileşeni.** `src/features/<özellik>/` altında görünüm bileşeni; gluestack-ui bileşenleri ve NativeWind tema token'larıyla. Yükleniyor (Skeleton) / hata (tekrar dene) / boş durumları dahil. Yeni yeniden kullanılabilir bileşen gerekiyorsa `/ui-component` akışını izle.
+5. **Feature bileşeni.** `src/features/<özellik>/` altında görünüm bileşeni; gluestack-ui bileşenleri ve NativeWind tema token'larıyla. Yükleniyor (Skeleton) / hata (tekrar dene) / boş durumları dahil. Metinler sözlükten (`/add-translation`); düzen telefon/tablet ve iki yönde duyarlı. Yeni yeniden kullanılabilir bileşen gerekiyorsa `/ui-component` akışını izle.
 6. **Rota.** `src/app/` altında ince rota dosyası; başlık ve navigasyon `_layout.tsx` ile uyumlu.
 7. **Kontrol.** `pnpm --filter @b2b/mobile lint` ve `pnpm --filter @b2b/mobile typecheck` çalıştır, hataları düzelt.
-8. **Görsel kontrol.** Simülatör açıksa `/screen-review` ile ekranı incelemeyi öner.
-9. **Özet.** Kullanıcıya eklenen dosyaları, yapılan varsayımları (`// ASSUMPTION:`) ve ekranın nasıl açılacağını Türkçe özetle.
+8. **Görsel kontrol.** Cihaz açık değilse `/run-demo`, açıksa `/screen-review` ile ekranı incele.
+9. **İnceleme.** `reviewer` ajanını çalıştır; bulguları düzelt.
+10. **Özet.** Kullanıcıya eklenen dosyaları, yapılan varsayımları (`// ASSUMPTION:`) ve ekranın nasıl açılacağını Türkçe özetle.
