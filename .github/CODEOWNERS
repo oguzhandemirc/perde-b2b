@@ -1,0 +1,15 @@
+# Ortak alanlardaki değişiklikler diğer kişinin onayını ister (bkz. .claude/rules/general/git.md).
+# Branch koruma ayarında "Require review from Code Owners" açılmalıdır.
+# TODO: GitHub kullanıcı adları netleşince <oguzhan> ve <yusuf> yerine yazıp satırları açın.
+#
+# /apps/mobile/          @<oguzhan>
+# /apps/web/             @<oguzhan>
+# /apps/backend/         @<yusuf>
+#
+# Ortak alanlar
+# /docs/api/             @<oguzhan> @<yusuf>
+# /packages/             @<oguzhan> @<yusuf>
+# /.claude/              @<oguzhan> @<yusuf>
+# /.github/              @<oguzhan> @<yusuf>
+# /package.json          @<oguzhan> @<yusuf>
+# /pnpm-workspace.yaml   @<oguzhan> @<yusuf>
